@@ -13,14 +13,11 @@ void Main()
     MooseSays("I really am enthusiastic");
 
     // As a question
-    CanadaQuestion();
-    EnthusiasticQuestion();
-    LoveCSharpQuestion();
-    SecretQuestion();
+    Questions();
 }
 
 
-void CanadaQuestion()
+void Questions()
 {
     bool isTrue = MooseAsks("Is Canada real?");
     if (isTrue)
@@ -31,10 +28,6 @@ void CanadaQuestion()
     {
         MooseSays("I  K N E W  I T !!!");
     }
-}
-
-void EnthusiasticQuestion()
-{
     bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
     if (isEnthusiastic)
     {
@@ -44,10 +37,6 @@ void EnthusiasticQuestion()
     {
         MooseSays("You should try it!");
     }
-}
-
-void LoveCSharpQuestion()
-{
     bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
     if (doesLoveCSharp)
     {
@@ -57,10 +46,6 @@ void LoveCSharpQuestion()
     {
         MooseSays("You will...oh, yes, you will...");
     }
-}
-
-void SecretQuestion()
-{
     bool wantsSecret = MooseAsks("Do you want to know a secret?");
     if (wantsSecret)
     {
