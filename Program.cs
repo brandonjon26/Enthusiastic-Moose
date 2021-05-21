@@ -11,49 +11,45 @@ void Main()
     // Let the moose speak!
     MooseSays("H I, I'M  E N T H U S I A S T I C !");
     MooseSays("I really am enthusiastic");
+}
 
-    // As a question
-    Questions();
+bool MooseAsks(string question)
+{
+    Console.Write($"{question} (Y/N): ");
+    string answer = Console.ReadLine().ToLower();
+
+    while (answer != "y" && answer != "n")
+    {
+        Console.Write($"{question} (Y/N): ");
+        answer = Console.ReadLine().ToLower();
+    }
+
+    if (answer == "y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 
-void Questions()
+Question("Is Canada real?", "Really? It seems very unlikely.", "I  K N E W  I T !!!");
+Question("Are you enthusiastic?", "Yay!", "You should try it!");
+Question("Do you love C# yet?", "Good job sucking up to your instructor!", "You will...oh, yes, you will...");
+Question("Do you want to know a secret?", "ME TOO!!!! I love secrets...tell me one!", "Oh, no...secrets are the best, I love to share them!");
+
+void Question(string question, string trueanswer, string falseanswer)
 {
-    bool isTrue = MooseAsks("Is Canada real?");
+    bool isTrue = MooseAsks(question);
     if (isTrue)
     {
-        MooseSays("Really? It seems very unlikely.");
+        MooseSays(trueanswer);
     }
     else
     {
-        MooseSays("I  K N E W  I T !!!");
-    }
-    bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
-    if (isEnthusiastic)
-    {
-        MooseSays("Yay!");
-    }
-    else
-    {
-        MooseSays("You should try it!");
-    }
-    bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
-    if (doesLoveCSharp)
-    {
-        MooseSays("Good job sucking up to your instructor!");
-    }
-    else
-    {
-        MooseSays("You will...oh, yes, you will...");
-    }
-    bool wantsSecret = MooseAsks("Do you want to know a secret?");
-    if (wantsSecret)
-    {
-        MooseSays("ME TOO!!!! I love secrets...tell me one!");
-    }
-    else
-    {
-        MooseSays("Oh, no...secrets are the best, I love to share them!");
+        MooseSays(falseanswer);
     }
 }
 
@@ -87,25 +83,4 @@ void MooseSays(string message)
                       \ \'._  ` '_.'
                        `^^` `^^^`
     ");
-}
-
-bool MooseAsks(string question)
-{
-    Console.Write($"{question} (Y/N): ");
-    string answer = Console.ReadLine().ToLower();
-
-    while (answer != "y" && answer != "n")
-    {
-        Console.Write($"{question} (Y/N): ");
-        answer = Console.ReadLine().ToLower();
-    }
-
-    if (answer == "y")
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
 }
